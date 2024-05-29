@@ -3,8 +3,9 @@ kind: Service
 metadata:
   name: super-cool-app
 spec:
-  ports:
-  - port: 8888
-    targetPort: 8888
+  type: NodePort
   selector:
     app: super-cool-app
+  ports:
+  - port: 8888
+    nodePort: 30042
