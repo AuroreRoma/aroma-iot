@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: super-cool-app
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: super-cool-app
+  template:
+    metadata:
+      labels:
+        app: super-cool-app
+    spec:
+      containers:
+      - image: wil42/playground:v2
+        name: super-cool-app
+        ports:
+        - containerPort: 8888
